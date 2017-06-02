@@ -14,23 +14,23 @@ class WorkerStub(object):
     """
     self.ping = channel.unary_unary(
         '/Worker/ping',
-        request_serializer=mwapi__pb2.VersionInfo.SerializeToString,
-        response_deserializer=mwapi__pb2.VersionInfo.FromString,
+        request_serializer=msgs.VersionInfo.SerializeToString,
+        response_deserializer=msgs.VersionInfo.FromString,
         )
     self.suggest_peers = channel.unary_unary(
         '/Worker/suggest_peers',
-        request_serializer=mwapi__pb2.PeersList.SerializeToString,
-        response_deserializer=mwapi__pb2.PeersList.FromString,
+        request_serializer=msgs.PeersList.SerializeToString,
+        response_deserializer=msgs.PeersList.FromString,
         )
     self.cognite_batch = channel.unary_unary(
         '/Worker/cognite_batch',
-        request_serializer=mwapi__pb2.CognitionRequest.SerializeToString,
-        response_deserializer=mwapi__pb2.CognitionResponse.FromString,
+        request_serializer=msgs.CognitionRequest.SerializeToString,
+        response_deserializer=msgs.CognitionResponse.FromString,
         )
     self.batch_status = channel.unary_unary(
         '/Worker/batch_status',
-        request_serializer=mwapi__pb2.BatchRequest.SerializeToString,
-        response_deserializer=mwapi__pb2.BatchStatus.FromString,
+        request_serializer=msgs.BatchRequest.SerializeToString,
+        response_deserializer=msgs.BatchStatus.FromString,
         )
 
 
@@ -67,23 +67,23 @@ def add_WorkerServicer_to_server(servicer, server):
   rpc_method_handlers = {
       'ping': grpc.unary_unary_rpc_method_handler(
           servicer.ping,
-          request_deserializer=mwapi__pb2.VersionInfo.FromString,
-          response_serializer=mwapi__pb2.VersionInfo.SerializeToString,
+          request_deserializer=msgs.VersionInfo.FromString,
+          response_serializer=msgs.VersionInfo.SerializeToString,
       ),
       'suggest_peers': grpc.unary_unary_rpc_method_handler(
           servicer.suggest_peers,
-          request_deserializer=mwapi__pb2.PeersList.FromString,
-          response_serializer=mwapi__pb2.PeersList.SerializeToString,
+          request_deserializer=msgs.PeersList.FromString,
+          response_serializer=msgs.PeersList.SerializeToString,
       ),
       'cognite_batch': grpc.unary_unary_rpc_method_handler(
           servicer.cognite_batch,
-          request_deserializer=mwapi__pb2.CognitionRequest.FromString,
-          response_serializer=mwapi__pb2.CognitionResponse.SerializeToString,
+          request_deserializer=msgs.CognitionRequest.FromString,
+          response_serializer=msgs.CognitionResponse.SerializeToString,
       ),
       'batch_status': grpc.unary_unary_rpc_method_handler(
           servicer.batch_status,
-          request_deserializer=mwapi__pb2.BatchRequest.FromString,
-          response_serializer=mwapi__pb2.BatchStatus.SerializeToString,
+          request_deserializer=msgs.BatchRequest.FromString,
+          response_serializer=msgs.BatchStatus.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
@@ -101,18 +101,18 @@ class MasternodeStub(object):
     """
     self.pong = channel.unary_unary(
         '/Masternode/pong',
-        request_serializer=mwapi__pb2.VersionInfo.SerializeToString,
-        response_deserializer=mwapi__pb2.VersionInfo.FromString,
+        request_serializer=msgs.VersionInfo.SerializeToString,
+        response_deserializer=msgs.VersionInfo.FromString,
         )
     self.suggest_peers = channel.unary_unary(
         '/Masternode/suggest_peers',
-        request_serializer=mwapi__pb2.PeersList.SerializeToString,
-        response_deserializer=mwapi__pb2.PeersList.FromString,
+        request_serializer=msgs.PeersList.SerializeToString,
+        response_deserializer=msgs.PeersList.FromString,
         )
     self.batch_completed = channel.unary_unary(
         '/Masternode/batch_completed',
-        request_serializer=mwapi__pb2.CognitionResult.SerializeToString,
-        response_deserializer=mwapi__pb2.CognitionStatus.FromString,
+        request_serializer=msgs.CognitionResult.SerializeToString,
+        response_deserializer=msgs.CognitionStatus.FromString,
         )
 
 
@@ -142,18 +142,18 @@ def add_MasternodeServicer_to_server(servicer, server):
   rpc_method_handlers = {
       'pong': grpc.unary_unary_rpc_method_handler(
           servicer.pong,
-          request_deserializer=mwapi__pb2.VersionInfo.FromString,
-          response_serializer=mwapi__pb2.VersionInfo.SerializeToString,
+          request_deserializer=msgs.VersionInfo.FromString,
+          response_serializer=msgs.VersionInfo.SerializeToString,
       ),
       'suggest_peers': grpc.unary_unary_rpc_method_handler(
           servicer.suggest_peers,
-          request_deserializer=mwapi__pb2.PeersList.FromString,
-          response_serializer=mwapi__pb2.PeersList.SerializeToString,
+          request_deserializer=msgs.PeersList.FromString,
+          response_serializer=msgs.PeersList.SerializeToString,
       ),
       'batch_completed': grpc.unary_unary_rpc_method_handler(
           servicer.batch_completed,
-          request_deserializer=mwapi__pb2.CognitionResult.FromString,
-          response_serializer=mwapi__pb2.CognitionStatus.SerializeToString,
+          request_deserializer=msgs.CognitionResult.FromString,
+          response_serializer=msgs.CognitionStatus.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

@@ -13,7 +13,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='neurochain-mwapi',
+    name='neuromwapi',
 
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
@@ -24,7 +24,7 @@ setup(
     long_description=long_description,
 
     # The project's main homepage.
-    url='https://github.com/neurochain/mwapi',
+    url='https://github.com/neurochain/neuroapi',
 
     # Author details
     author='Dr Maxim Orlovsky',
